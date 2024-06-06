@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>NCT</title>
+   <link rel="stylesheet" href="NCT.css">
+      
+</head>
+<body>
+   <div class="container">
+      <h1><span>NCT</span>no Brasil em:</h1>
+      <div class="Contador">
+         <div id="Day">NA</div>
+         <div id="Hour">NA</div>
+         <div id="Minute">NA</div>
+         <div id="Second">NA</div>
+      </div>
+   </div>
+   <script type="text/javascript">
+      var countDate = new Date ('Sep 2, 2024 00:00:00').getTime();
+      function diaDoShow(){
+         var now = new Date().getTime();
+         gap = countDate - now;
+         var Second = 1000
+         var Minute = Second * 60;
+         var Hour = Minute * 60;
+         var Day = Hour * 24;
+
+         var d = Math.floor(gap / (Day));
+         var h = Math.floor((gap % (Day)) / (Hour));
+         var m = Math.floor((gap % (Hour)) / (Minute));
+         var s = Math.floor((gap % (Minute)) / (Second));
+
+         document.getElementById('Day').innerText = d;
+         document.getElementById('Hour').innerText = h;
+         document.getElementById('Minute').innerText = m;
+         document.getElementById('Second').innerText = s;
+      }
+      setInterval(function(){
+         diaDoShow();
+      },1000)
+   </script>
+</body>
+</html>
